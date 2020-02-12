@@ -43,9 +43,7 @@ class SearchResultContainer extends Component {
     console.log(searchkey);
     console.log(this.state.result);
     // this.state.result = this.state.result.filter(this.state.result => this.state.result.includes(searchkey));
-    // searchkey = searchkey.toLowerCase;
-    // person.firstname = toLowerCase(person.firstname);
-    var filterResult = this.state.result.filter(person => person.firstname === searchkey);
+    var filterResult = this.state.result.filter(person => person.firstName === searchkey)
 
     this.setState({
       result:filterResult
@@ -58,7 +56,7 @@ class SearchResultContainer extends Component {
   }
 
 
-  // When the form is submitted, search the result array for matching values
+  // When the form is submitted, search the Giphy API for `this.state.search`
   handleFormSubmit = event => {
     event.preventDefault();
     const value = event.target.value;
